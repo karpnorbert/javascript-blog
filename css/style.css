@@ -102,11 +102,11 @@ body {
 /* Post */
 
 .post {
-  display: none;
-  &.active {
-    display: block;
+    display: none;
+    &.active {
+      display: block;
+    }
   }
-}
 
 .post-author {
   font-style: italic;
@@ -118,3 +118,6 @@ body {
     margin: 0 10px 0 0;
   }
 }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
