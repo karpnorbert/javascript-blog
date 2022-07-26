@@ -1,17 +1,20 @@
-/*document.getElementById('test-button').addEventListener('click', function(){
-    const links = document.querySelectorAll('.titles a');
-    console.log('links:', links);
-  });*/
-
 const titleClickHandler = function(event){
+  const clickedElement = this;
   console.log('Link was clicked!');
-  console.log(event)
 
-  /* remove class 'active' from all article links  */
+  /* [DONE] remove class 'active' from all article links  */
 
-  /* add class 'active' to the clicked link */
+  const activeLinks = document.querySelectorAll('.titles a.active');
 
-  /* remove class 'active' from all articles */
+  for(let activeLink of activeLinks){
+    activeLink.classList.remove('active');
+  }
+
+  /* [IN PROGRESS] add class 'active' to the clicked link */
+  clickedElement.classList.add('active');
+  console.log('clickedElement:', clickedElement);
+
+  /* [DONE] remove class 'active' from all articles */
 
   /* get 'href' attribute from the clicked link */
 
