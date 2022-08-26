@@ -32,6 +32,8 @@
     "autoprefixer": "^10.2.4",
     "browser-sync": "^2.26.3",
     "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.31.0",
     "html-validate": "^2.8.0",
     "mkdirp": "^0.5.1",
