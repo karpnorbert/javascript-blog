@@ -133,11 +133,14 @@ function generateTags(){
       console.log(tag);
     
       /* generate HTML of the link */
+      
+      const tagLinkHTML ='<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+      console.log(tagLinkHTML);
 
       /* add generated code to html variable */
-    
-    /* END LOOP: for each tag */
     }
+    /* END LOOP: for each tag */
+    
     /* insert HTML of all the links into the tags wrapper */
 
     /* END LOOP: for every article: */
