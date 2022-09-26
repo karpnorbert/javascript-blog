@@ -10,12 +10,12 @@ const optArticleSelector = '.post',
 function titleClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
-  console.log('Link was clicked!');
+ 
 
   /* [DONE] remove class 'active' from all article links  */
 
   const activeLinks = document.querySelectorAll('.titles a.active');
-  console.log(activeLinks);
+
 
   for (let activeLink of activeLinks) {
     activeLink.classList.remove('active');
@@ -79,7 +79,7 @@ function generateTitleLinks(customSelector = ''){
     /* create HTML of the link */
 
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-    console.log('HTML link is created');
+    console.log('HTML of link was created!');
 
     /* insert link into titleList */
 
@@ -90,7 +90,7 @@ function generateTitleLinks(customSelector = ''){
   titleList.innerHTML = html;
 
   const links = document.querySelectorAll('.titles a');
-  console.log('??');
+  console.log('what is it?');
   for (let link of links) {
     link.addEventListener('click', titleClickHandler);
     console.log(link);
@@ -171,14 +171,24 @@ function tagClickHandler(event){
 
   /* make a new constant "tag" and extract tag from the "href" constant */
 
+  const tag = href.replace('#tag-', '');
+  console.log(tag, tag);
+
   /* find all tag links with class active */
+
+  const activeTagLink = document.querySelectorAll('a.active[href=^="#tag-"]');
+  console.log(activeTagLink);
 
   /* START LOOP: for each active tag link */
 
-  /* remove class active */
+  for(let activeTagLink of activeTagLinks){
+
+    /* remove class active */
+
+    activeTagLink.classList.remove('active');
 
   /* END LOOP: for each active tag link */
-
+  }
   /* find all tag links with "href" attribute equal to the "href" constant */
 
   /* START LOOP: for each found tag link */
@@ -188,6 +198,8 @@ function tagClickHandler(event){
   /* END LOOP: for each found tag link */
 
   /* execute function "generateTitleLinks" with article selector as argument */
+
+  generateTitleLinks('[data-tags~="' + tag + '"]');
 }
 
 function addClickListenersToTags(){
