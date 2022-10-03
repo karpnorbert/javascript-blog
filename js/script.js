@@ -228,5 +228,28 @@ function addClickListenersToTags(){
 
 addClickListenersToTags();
 
+function generateAuthors (){
 
+
+  /* find all articles*/
+
+  const articles = document.querySelectorAll(optArticleSelector);
+  console.log(articles);
+
+  /* START LOOP: for every article: */
+
+  /* Find author wrapper */
+  
+  /* make html variable with empty string */
+
+  /* get author from data-author attrubite */
+
+  /*generate HTML of the link */
+
+  /* add generated code to html variable */
+
+  /* insert HTML of all the links into the author wrapper */
+
+  /* END LOOP: for every article */
+}
 
