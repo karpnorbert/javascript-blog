@@ -4,7 +4,9 @@
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorSelector = '.post-author';
+
 
 
 function titleClickHandler(event){
@@ -238,18 +240,23 @@ function generateAuthors (){
 
   /* START LOOP: for every article: */
 
-  /* Find author wrapper */
+  for(let article of articles){
+
+    /* Find author wrapper */
   
-  /* make html variable with empty string */
+    const authorWrapper = article.querySelector(optArticleAuthorSelector);
+    console.log(authorWrapper);
 
-  /* get author from data-author attrubite */
+    /* make html variable with empty string */
 
-  /*generate HTML of the link */
+    /* get author from data-author attrubite */
 
-  /* add generated code to html variable */
+    /*generate HTML of the link */
 
-  /* insert HTML of all the links into the author wrapper */
+    /* add generated code to html variable */
+
+    /* insert HTML of all the links into the author wrapper */
 
   /* END LOOP: for every article */
+  }
 }
-
