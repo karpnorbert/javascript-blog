@@ -249,6 +249,8 @@ function generateAuthors (){
 
     /* make html variable with empty string */
 
+    let html = '';
+
     /* get author from data-author attrubite */
 
     /*generate HTML of the link */
