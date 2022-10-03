@@ -156,6 +156,9 @@ function generateTags(){
 
 generateTags();
 
+
+
+
 function tagClickHandler(event){
   /* prevent default action for this event */
 
@@ -231,30 +234,32 @@ function addClickListenersToTags(){
 addClickListenersToTags();
 
 function generateAuthors (){
-  const allAuthors = {};
-  console.log(allAuthors);
 
-  /* find all authors articles*/
+  /* [NEW] create a new variable allAuthors with an empty array */
+  let allAuthors = {};
+  /*console.log(allAuthors);*/
+
+  /* find all articles*/
   const articles = document.querySelectorAll(optArticleSelector);
- 
+  console.log(articles);
   /* START LOOP: for every article: */
 
-  for(let article of articles){
+  for (let article of articles){
 
     /* Find author wrapper */
   
     const authorWrapper = article.querySelector(optArticleAuthorSelector);
-    console.log(authorWrapper);
+    console.log('authorWrapper:', authorWrapper);
+
+    /* make html variable with empty string */
+
+    let html = '';
+    /*console.log(html);*/
 
     /* get author from data-author attrubite */
 
     const articleAuthor = article.getAttribute('data-author');
-    console.log(articleAuthor);
-    
-    /* make html variable with empty string */
-
-    let html = '';
-    console.log(html);
+    console.log('articleAuthor:', articleAuthor);
 
     /*generate HTML of the link */
 
@@ -265,9 +270,10 @@ function generateAuthors (){
 
     html = html + authorLinkHTML + ' ';
 
-    /*add author*/
+    /*  insert HTML of all the links into the authors wrapper*/
 
     authorWrapper.innerHTML = authorLinkHTML;
+    console.log('html:', html);
 
   /* END LOOP: for every article */
   }
