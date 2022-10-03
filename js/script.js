@@ -39,21 +39,21 @@ function titleClickHandler(event){
   /* [DONE] get 'href' attribute from the clicked link */
 
   const articleSelector = clickedElement.getAttribute('href');
-  console.log(articleSelector);
+  /*console.log(articleSelector);*/
 
   /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
   const targetArticle = document.querySelector(articleSelector);
-  console.log(targetArticle);
+  /*console.log(targetArticle);*/
 
   /* [DONE] add class 'active' to the correct article */
 
   targetArticle.classList.add('active');
-  console.log('Article is visible');
+  /*console.log('Article is visible');*/
 }
 
 function generateTitleLinks(customSelector = ''){
-  console.log('Title Lists are just generated');
+  /*console.log('Title Lists are just generated');*/
 
   /* remove contents of titleList */
 
@@ -69,7 +69,7 @@ function generateTitleLinks(customSelector = ''){
     /* get the article id */
 
     const articleId = article.getAttribute('id');
-    console.log(articleId);
+    /*console.log(articleId);*/
 
     /* find the title element */
 
@@ -113,7 +113,7 @@ function generateTags(){
     /* find tags wrapper */
 
     const titleList = article.querySelector(optArticleTagsSelector);
-    console.log(titleList);
+    /*console.log(titleList);*/
 
     /* make html variable with empty string */
 
@@ -128,7 +128,7 @@ function generateTags(){
     /* split tags into array */
 
     const articleTagsArray = articleTags.split(' ');
-    console.log(articleTagsArray);
+    /*console.log(articleTagsArray);*/
 
     /* START LOOP: for each tag */
     for(let tag of articleTagsArray){
@@ -231,13 +231,12 @@ function addClickListenersToTags(){
 addClickListenersToTags();
 
 function generateAuthors (){
+  const allAuthors = {};
+  console.log(allAuthors);
 
-
-  /* find all articles*/
-
+  /* find all authors articles*/
   const articles = document.querySelectorAll(optArticleSelector);
-  console.log(articles);
-
+ 
   /* START LOOP: for every article: */
 
   for(let article of articles){
@@ -247,21 +246,31 @@ function generateAuthors (){
     const authorWrapper = article.querySelector(optArticleAuthorSelector);
     console.log(authorWrapper);
 
-    /* make html variable with empty string */
-
-    let html = '';
-
     /* get author from data-author attrubite */
 
     const articleAuthor = article.getAttribute('data-author');
     console.log(articleAuthor);
+    
+    /* make html variable with empty string */
+
+    let html = '';
+    console.log(html);
 
     /*generate HTML of the link */
 
+    const authorLinkHTML = '<li><a href="#author-'+ articleAuthor +'">' + articleAuthor +'</a></li>';
+    console.log(authorLinkHTML);
+
     /* add generated code to html variable */
 
-    /* insert HTML of all the links into the author wrapper */
+    html = html + authorLinkHTML + ' ';
+
+    /*add author*/
+
+    authorWrapper.innerHTML = authorLinkHTML;
 
   /* END LOOP: for every article */
   }
 }
+
+generateAuthors();
